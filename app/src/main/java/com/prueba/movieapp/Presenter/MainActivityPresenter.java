@@ -2,6 +2,7 @@ package com.prueba.movieapp.Presenter;
 
 import android.content.Context;
 
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.prueba.movieapp.Interactor.MainActivityInteractor;
 import com.prueba.movieapp.Interfaces.Contract;
 import com.prueba.movieapp.VO.Movie;
@@ -26,5 +27,10 @@ public class MainActivityPresenter implements Contract.Presenter, Contract.onOpe
     @Override
     public void onRead(ArrayList<Movie> movies) {
         view.onMovieRead(movies);
+    }
+
+    @Override
+    public void onLoad(JsonObjectRequest jsonObjectRequest) {
+        view.onLoadData(jsonObjectRequest);
     }
 }

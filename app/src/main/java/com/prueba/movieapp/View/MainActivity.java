@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.prueba.movieapp.Adapters.MovieAdapter;
 import com.prueba.movieapp.Interfaces.Contract;
 import com.prueba.movieapp.Presenter.MainActivityPresenter;
@@ -35,4 +38,11 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(movieAdapter);
     }
+
+    @Override
+    public void onLoadData(JsonObjectRequest jsonObjectRequest) {
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonObjectRequest);
+    }
+
 }

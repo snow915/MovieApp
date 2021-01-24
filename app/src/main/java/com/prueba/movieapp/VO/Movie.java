@@ -1,5 +1,7 @@
 package com.prueba.movieapp.VO;
 
+import android.graphics.Bitmap;
+
 public class Movie {
     private String url;
     private String title;
